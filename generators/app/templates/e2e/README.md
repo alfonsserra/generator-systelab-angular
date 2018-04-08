@@ -4,7 +4,7 @@ This folder contains the End to End test for the application using the standard 
 
 ## Configuration to test in multiple browsers
 
-Modify the standard protractor.conf.js in order to set a list of browsers to test.
+Modify the standard _protractor.conf.js in order to set a list of browsers to test.
 
 Initially was:
 

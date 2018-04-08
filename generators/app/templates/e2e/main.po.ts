@@ -6,7 +6,4 @@ export class MainPage {
 		return element(by.id('username'));
 	}
 
-	getPatientButton() {
-		return element(by.buttonText('Patient'));
-	}
 }
