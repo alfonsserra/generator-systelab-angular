@@ -1,0 +1,11 @@
+{
+  "COMMON_ENTER": "Enter",
+  "COMMON_SESSION_LOGIN": "Login",
+  "COMMON_TERMS_OF_USE": "Terms of use",
+  "COMMON_PRIVACY": "Privacy",
+  "COMMON_USERNAME": "Username",
+  "COMMON_PASSWORD": "Password",
+  "COMMON_VERSION": "Version",
+  "COMMON_PATIENT": "Patient",
+  "COMMON_DOCUMENTATION": "Documentation"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "generator-systelab-angular",
+  "version": "1.0.0",
+  "description": "Generator for systelab angular applications",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "aserra/generator-systelab-angular",
+  "author": {
+    "name": "Alfons Serra",
+    "email": "alfonsoserra@gmail.com",
+    "url": "https://github.com/alfonsserra"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^2.0.3",
+    "chalk": "^2.3.2",
+    "yosay": "^2.0.2"
+  }
+}
