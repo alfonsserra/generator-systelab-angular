@@ -21,8 +21,23 @@ module.exports = class extends Generator {
 
 	writing() {
 		this.fs.copy(
-			this.templatePath('Dockerfile'),
+			this.templatePath('_Dockerfile'),
 			this.destinationPath('Dockerfile'));
+		this.fs.copy(
+			this.templatePath('_karma.conf.js'),
+			this.destinationPath('karma.conf.js'));
+		this.fs.copy(
+			this.templatePath('_protractor.conf.js'),
+			this.destinationPath('protractor.conf.js'));
+		this.fs.copy(
+			this.templatePath('_README.md'),
+			this.destinationPath('README.md'));
+		this.fs.copy(
+			this.templatePath('_tsconfig.json'),
+			this.destinationPath('tsconfig.json'));
+		this.fs.copy(
+			this.templatePath('_tslint.json'),
+			this.destinationPath('tslint.json'));
 		this.fs.copyTpl(
 			this.templatePath('_package.json'),
 			this.destinationPath('package.json'),
