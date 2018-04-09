@@ -21,5 +21,7 @@ before_install:
   - docker run --link db:db -d -e MYSQL_HOST=db -e MYSQL_PORT=3306 -e MYSQL_DATABASE=SEED -e MYSQL_USER=SEED -e MYSQL_PASSWORD=SEED -p 8080:8080 systelab/seed-jee:latest
 install:
   - npm install
+<% if (e2e) { %>
 script:
   - npm run e2e
+<% } %>

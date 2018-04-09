@@ -9,6 +9,11 @@ module.exports = class extends Generator {
 	prompting() {
 		return this.prompt([{
 			type: 'input',
+			name: 'account',
+			message: 'Your github account name',
+			default: 'systelab'
+		},{
+			type: 'input',
 			name: 'name',
 			message: 'Your project name',
 			//Defaults to the project's folder name if the input is skipped
@@ -29,7 +34,7 @@ module.exports = class extends Generator {
 			this.props = answers;
 			this.log('Summary:');
 
-		this.log('   Project name: '+answers.name);
+		this.log('   Project name: '+answers.account+'/'+answers.name);
 			if (answers.e2e) {
 				this.log('   Include E2E test');
 			}
@@ -47,9 +52,12 @@ module.exports = class extends Generator {
 		this.fs.copy(
 			this.templatePath('_karma.conf.js'),
 			this.destinationPath('karma.conf.js'));
-		this.fs.copy(
+		this.fs.copyTpl(
 			this.templatePath('_README.md'),
-			this.destinationPath('README.md'));
+			this.destinationPath('README.md'),
+			{ 	title: this.props.name,
+				e2e: this.props.e2e,
+				account: this.props.account});
 		this.fs.copy(
 			this.templatePath('_tsconfig.json'),
 			this.destinationPath('tsconfig.json'));
@@ -81,9 +89,11 @@ module.exports = class extends Generator {
 				this.destinationPath('e2e'));
 		}
 		if (this.props.travis) {
-			this.fs.copy(
+			this.fs.copyTpl(
 				this.templatePath('_travis.yml'),
-				this.destinationPath('.travis.yml'));
+				this.destinationPath('.travis.yml'),
+				{ 	title: this.props.name,
+					e2e: this.props.e2e});
 		}
 
 		if (this.props.docker) {

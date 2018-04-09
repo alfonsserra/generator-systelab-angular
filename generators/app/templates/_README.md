@@ -1,39 +1,29 @@
-[![Build Status](https://travis-ci.org/systelab/seed-angular.svg?branch=master)](https://travis-ci.org/systelab/seed-angular)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/88aef97b995c4bd0ae6e7e615b663ec5)](https://www.codacy.com/app/alfonsserra/seed-angular?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=systelab/seed-angular&amp;utm_campaign=Badge_Grade)
 
-# `seed-angular` — Seed for Angular Systelab projects
-
-This project is an application skeleton for a typical [Angular][Angular] frontend application. You can use it
-to quickly bootstrap your projects and dev environment.
-
-The seed contains a Patient Management sample application and is preconfigured to install the Angular
-framework and a bunch of development and testing tools for instant development gratification.
-
-The app doesn't do much, just shows how to use different Angular standards and other suggested tools together, including the utilization of the libraries created by Systelab.
+# `<%= title %>` — Project description
 
 ## Getting Started
 
-To get you started you can simply clone the `seed-angular` repository and install the dependencies:
+To get you started you can simply clone the `<%= title %>` repository and install the dependencies:
 
 ### Prerequisites
 
-You need [git][git] to clone the `seed-angular` repository.
+You need [git][git] to clone the `<%= title %>` repository.
 
 You will need [Node.js][node] and [npm][npm].
 
-### Clone `seed-angular`
+### Clone `<%= title %>`
 
-Clone the `seed-angular` repository using git:
+Clone the `<%= title %>` repository using git:
 
 ```bash
-git clone https://github.com/systelab/seed-angular.git
-cd seed-angular
+git clone https://github.com/<%= account %>/<%= title %>.git
+cd <%= title %>
 ```
 
-If you just want to start a new project without the `seed-angular` commit history then you can do:
+If you just want to start a new project without the `<%= title %>` commit history then you can do:
 
 ```bash
-git clone --depth=1 https://github.com/systelab/seed-angular.git <your-project-name>
+git clone --depth=1 https://github.com/<%= account %>/<%= title %>.git <your-project-name>
 ```
 
 The `depth=1` tells git to only pull down one commit worth of historical data.
@@ -55,18 +45,17 @@ ng serve
 
 In order to login, you need a backend. A JEE Backend is implemented in the https://github.com/systelab/seed-jee repository. A .net Backend is implemented in the https://github.com/systelab/seed-dotnet repository.
 
+<% if (e2e) { %>
+
 ## Docker
 
 ### Build docker image
 
-There is an Automated Build Task in Docker Cloud in order to build the Docker Image. 
-This task, triggers a new build with every git push to your source code repository to create a 'latest' image.
-There is another build rule to trigger a new tag and create a 'version-x.y.z' image
 
 You can always manually create the image with the following command:
 
 ```bash
-docker build -t systelab/seed-angular . 
+docker build -t <%= account %>/<%= title %> .
 ```
 
 The image created, will contain a [nginx server][nginx] with the application files.
@@ -80,7 +69,7 @@ You can easily tweak the nginx config in [nginx/default.conf](nginx/default.conf
 ### Run the container
 
 ```bash
-docker run -d -p 8081:80 systelab/seed-angular
+docker run -d -p 8081:80 <%= account %>/<%= title %>
 ```
 
 The app will be available at http://localhost:8081
@@ -88,15 +77,12 @@ The app will be available at http://localhost:8081
 In order to change the backend server, you can set the variable BACKEND, for example:
 
 ```bash
-docker run -d -e BACKEND='http://www.dep.com:8080' -p 8081:80 systelab/seed-angular
+docker run -d -e BACKEND='http://www.dep.com:8080' -p 8081:80 <%= account %>/<%= title %>
 ```
 
 If not set, the default value will be http://localhost:8080
 
-## Going native
-
-Follow the [instructions](ELECTRON.md) to generate native desktop applications.
-
+<% } %>
 
 
 [git]: https://git-scm.com/
