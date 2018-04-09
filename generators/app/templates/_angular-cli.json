@@ -54,20 +54,24 @@
       }
     }
   ],
+<% if (e2e) { %>
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
     }
   },
+<% } %>
   "lint": [
     {
       "project": "src/tsconfig.app.json"
     },
-    {
-      "project": "src/tsconfig.spec.json"
-    },
+<% if (e2e) { %>
     {
       "project": "e2e/tsconfig.e2e.json"
+    },
+<% } %>
+    {
+      "project": "src/tsconfig.spec.json"
     }
   ],
   "test": {
