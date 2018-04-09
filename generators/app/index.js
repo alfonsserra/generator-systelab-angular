@@ -21,6 +21,10 @@ module.exports = class extends Generator {
 			type    : 'confirm',
 			name    : 'docker',
 			message : 'Would you like to include docker image generation?'
+		}, {
+			type    : 'confirm',
+			name    : 'travis',
+			message : 'Would you like to include a Travis script?'
 		}]).then((answers)=> {
 			this.props = answers;
 			this.log('Summary:');
@@ -28,6 +32,9 @@ module.exports = class extends Generator {
 		this.log('   Project name: '+answers.name);
 			if (answers.e2e) {
 				this.log('   Include E2E test');
+			}
+			if (answers.travis) {
+				this.log('   Include Travis script');
 			}
 			if (answers.docker) {
 				this.log('   Include Docker image generation');
@@ -49,6 +56,9 @@ module.exports = class extends Generator {
 		this.fs.copy(
 			this.templatePath('_tslint.json'),
 			this.destinationPath('tslint.json'));
+		this.fs.copy(
+			this.templatePath('_gitignore'),
+			this.destinationPath('.gitignore'));
 		this.fs.copyTpl(
 			this.templatePath('_package.json'),
 			this.destinationPath('package.json'),
@@ -70,6 +80,12 @@ module.exports = class extends Generator {
 				this.templatePath('e2e'),
 				this.destinationPath('e2e'));
 		}
+		if (this.props.travis) {
+			this.fs.copy(
+				this.templatePath('_travis.yml'),
+				this.destinationPath('.travis.yml'));
+		}
+
 		if (this.props.docker) {
 			this.fs.copy(
 				this.templatePath('_Dockerfile'),
