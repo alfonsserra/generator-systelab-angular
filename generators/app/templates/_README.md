@@ -45,7 +45,7 @@ ng serve
 
 In order to login, you need a backend. A JEE Backend is implemented in the https://github.com/systelab/seed-jee repository. A .net Backend is implemented in the https://github.com/systelab/seed-dotnet repository.
 
-<% if (e2e) { %>
+<% if (docker) { %>
 
 ## Docker
 

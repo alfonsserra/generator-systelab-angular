@@ -57,6 +57,7 @@ module.exports = class extends Generator {
 			this.destinationPath('README.md'),
 			{ 	title: this.props.name,
 				e2e: this.props.e2e,
+				docker: this.props.docker,
 				account: this.props.account});
 		this.fs.copy(
 			this.templatePath('_tsconfig.json'),
