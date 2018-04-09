@@ -23,5 +23,5 @@ mkdir my-new-project && cd $_
 Run `yo systelab-angular`, optionally passing an app name:
 
 ```bash
-yo angular [app-name]
+yo systelab-angular [app-name]
 ```
