@@ -1,0 +1,18 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - "7"
+
+before_install:
+  - npm i -g makeshift && makeshift -s @systelab-technologies -r https://registry.npmjs.org
+
+script:
+  - npm install
+
+deploy:
+  provider: npm
+  email: aserra@werfen.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
