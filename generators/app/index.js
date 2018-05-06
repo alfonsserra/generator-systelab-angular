@@ -50,7 +50,7 @@ module.exports = class extends Generator {
 	writing() {
 		this.log('Creating files:');
 		this.fs.copy(
-			this.templatePath('_karma.conf.js'),
+			this.templatePath('karma.conf.js'),
 			this.destinationPath('karma.conf.js'));
 		this.fs.copyTpl(
 			this.templatePath('_README.md'),
@@ -60,10 +60,10 @@ module.exports = class extends Generator {
 				docker: this.props.docker,
 				account: this.props.account});
 		this.fs.copy(
-			this.templatePath('_tsconfig.json'),
+			this.templatePath('tsconfig.json'),
 			this.destinationPath('tsconfig.json'));
 		this.fs.copy(
-			this.templatePath('_tslint.json'),
+			this.templatePath('tslint.json'),
 			this.destinationPath('tslint.json'));
 		this.fs.copy(
 			this.templatePath('_gitignore'),
@@ -83,7 +83,7 @@ module.exports = class extends Generator {
 			this.destinationPath('src'));
 		if (this.props.e2e) {
 			this.fs.copy(
-				this.templatePath('_protractor.conf.js'),
+				this.templatePath('protractor.conf.js'),
 				this.destinationPath('protractor.conf.js'));
 			this.fs.copy(
 				this.templatePath('e2e'),
@@ -99,7 +99,7 @@ module.exports = class extends Generator {
 
 		if (this.props.docker) {
 			this.fs.copy(
-				this.templatePath('_Dockerfile'),
+				this.templatePath('Dockerfile'),
 				this.destinationPath('Dockerfile'));
 			this.fs.copy(
 				this.templatePath('docker'),
