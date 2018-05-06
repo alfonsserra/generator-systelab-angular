@@ -74,8 +74,8 @@ module.exports = class extends Generator {
 			{ 	title: this.props.name,
 				e2e: this.props.e2e});
 		this.fs.copyTpl(
-			this.templatePath('_angular-cli.json'),
-			this.destinationPath('.angular-cli.json'),
+			this.templatePath('_angular.json'),
+			this.destinationPath('angular.json'),
 			{ 	title: this.props.name,
 				e2e: this.props.e2e});
 		this.fs.copy(
