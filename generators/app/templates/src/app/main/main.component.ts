@@ -16,7 +16,6 @@ import { ChangePasswordDialog, ChangePasswordDialogParameters } from 'systelab-l
 	templateUrl: 'main.component.html'
 })
 export class MainComponent implements OnInit {
-	title = 'Angular Seed Application';
 
 	private frameWidth = 0;
 	private frameHeight = 0;
