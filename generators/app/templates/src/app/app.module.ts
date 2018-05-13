@@ -9,8 +9,6 @@ import { SystelabTranslateModule } from 'systelab-translate';
 import { SystelabPreferencesModule } from 'systelab-preferences';
 import { BASE_PATH } from './common/variables';
 import { environment } from '../environments/environment';
-import { ApiModule } from './common/api.module';
-import { GlobalsModule } from './globals/globals.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainComponent } from './main/main.component';
 import { AppRoutingModule } from './app.routing';
@@ -20,6 +18,10 @@ import { DialogService } from 'systelab-components/widgets/modal/dialog/dialog.s
 import { SystelabLoginModule } from 'systelab-login';
 import { LoginComponent } from './login/login.component';
 import { EmptyBodyInterceptor } from './common/api/empty-body.interceptor';
+import { GridContextMenuComponent } from 'systelab-components/widgets/grid/contextmenu/grid-context-menu.component';
+import { GridHeaderContextMenuComponent } from 'systelab-components/widgets/grid/contextmenu/grid-header-context-menu.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { DndModule } from 'ng2-dnd';
 
 @NgModule({
 
@@ -30,9 +32,12 @@ import { EmptyBodyInterceptor } from './common/api/empty-body.interceptor';
 		SystelabTranslateModule.forRoot(),
 		SystelabPreferencesModule.forRoot(),
 		SystelabComponentsModule.forRoot(),
+		DndModule.forRoot(),
+		AgGridModule.withComponents([
+			GridContextMenuComponent,
+			GridHeaderContextMenuComponent
+		]),
 		SystelabLoginModule.forRoot(),
-		ApiModule.forRoot(),
-		GlobalsModule.forRoot(),
 		AppRoutingModule
 	],
 	declarations:    [

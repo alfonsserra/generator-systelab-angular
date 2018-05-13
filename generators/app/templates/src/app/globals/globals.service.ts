@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+	provideIn: 'root'
+})
 export class ApiGlobalsService {
 	bearer: string;
 }
