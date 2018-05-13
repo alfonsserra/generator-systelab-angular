@@ -27,7 +27,8 @@
     "rxjs": "6.1.0",
     "zone.js": "0.8.26",
     "systelab-components": "^6.3.0",
-    "systelab-login": "^4.2.0",
+    "systelab-translate": "^4.2.0",
+    "systelab-login": "^4.0.0",
     "systelab-preferences": "^3.0.0"
   },
   "devDependencies": {
