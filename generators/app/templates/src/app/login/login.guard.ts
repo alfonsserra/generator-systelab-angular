@@ -3,7 +3,7 @@ import { CanActivate, Router } from '@angular/router';
 import { ApiGlobalsService } from '../globals/globals.service';
 
 @Injectable({
-	provideIn: 'root'
+	providedIn: 'root'
 })
 export class LoginGuard implements CanActivate {
 

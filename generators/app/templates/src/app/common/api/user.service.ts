@@ -6,7 +6,7 @@ import { BASE_PATH } from '../variables';
 import { ApiGlobalsService } from '../../globals/globals.service';
 
 @Injectable({
-	provideIn: 'root'
+	providedIn: 'root'
 })
 export class UserService {
 

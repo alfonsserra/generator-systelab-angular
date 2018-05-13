@@ -5,7 +5,7 @@ import { catchError } from 'rxjs/operators';
 
 // Trick to solve error corrected in version 5.2 by Alex and Misko in https://github.com/angular/angular/commit/503be69af65e85def00da1d2a049e8ebb8059e47
 @Injectable({
-	provideIn: 'root'
+	providedIn: 'root'
 })
 export class EmptyBodyInterceptor implements HttpInterceptor {
 
